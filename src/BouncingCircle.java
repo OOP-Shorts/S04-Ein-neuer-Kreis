@@ -1,4 +1,5 @@
 import de.ur.mi.oop.colors.Color;
+import de.ur.mi.oop.colors.Colors;
 import de.ur.mi.oop.graphics.Circle;
 
 public class BouncingCircle {
@@ -15,7 +16,9 @@ public class BouncingCircle {
     public void update() {
         if(shape.getXPos() + shape.getRadius() >= worldWidth) {
             xVelocity = -1;
+            shape.setColor(Colors.getRandomColor());
         } else if (shape.getXPos() - shape.getRadius() <= 0) {
+            shape.setColor(Colors.getRandomColor());
             xVelocity = 1;
         }
         shape.move(xVelocity, 0);
